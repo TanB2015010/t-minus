@@ -7,13 +7,15 @@ function MainTask(props) {
   };
 
   return (
-    <input
-      className="mainTaskInput"
-      type="text"
-      value={mainTask}
-      autoComplete="false"
-      onChange={updateMainTask}
-    />
+    <div>
+      <input
+        className="mainTaskInput"
+        type="text"
+        value={mainTask}
+        autoComplete="false"
+        onChange={updateMainTask}
+      />
+    </div>
   );
 }
 

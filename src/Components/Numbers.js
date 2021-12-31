@@ -11,7 +11,7 @@ function Numbers(props) {
   };
 
   return (
-    <>
+    <div>
       <input
         className="minutesInput"
         disabled={isRunning}
@@ -21,7 +21,7 @@ function Numbers(props) {
         onChange={updateMinutes}
       />{" "}
       :{seconds}
-    </>
+    </div>
   );
 }
 

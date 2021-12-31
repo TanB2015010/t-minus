@@ -7,10 +7,26 @@ function Controls(props) {
   };
 
   return (
-    <>
-      <button disabled={isRunning}>Restart</button>
-      <button onClick={updateIsRunning}>{isRunning ? "Stop" : "Start"}</button>
-    </>
+    <div className="controls">
+      <button
+        className="controls-button"
+        disabled={isRunning}
+        style={{
+          backgroundColor: "#f0ad4e",
+        }}
+      >
+        Restart
+      </button>
+      <button
+        className="controls-button"
+        onClick={updateIsRunning}
+        style={{
+          backgroundColor: isRunning ? "#bb2124" : "#22bb33",
+        }}
+      >
+        {isRunning ? "Stop" : "Start"}
+      </button>
+    </div>
   );
 }
 

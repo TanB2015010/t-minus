@@ -11,11 +11,11 @@ function TimerContainer(props) {
   const [isRunning, setIsRunning] = useState(false);
 
   return (
-    <>
+    <div className="timer-container">
       <MainTask mainTask={mainTask} setMainTask={setMainTask} />
       <Numbers time={time} setTime={setTime} isRunning={isRunning} />
       <Controls isRunning={isRunning} setIsRunning={setIsRunning} />
-    </>
+    </div>
   );
 }
 
