@@ -17,10 +17,7 @@ function App() {
     <div
       className="app"
       style={{
-        background: `url(${backgroundUrl})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundImage: `url(${backgroundUrl})`,
       }}
     >
       <TimerContainer mainTask={mainTask} setMainTask={setMainTask} />
