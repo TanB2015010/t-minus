@@ -8,7 +8,7 @@ function MainTask(props) {
 
   return (
     <div>
-      <input
+      <textarea
         className="mainTaskInput"
         type="text"
         value={mainTask}

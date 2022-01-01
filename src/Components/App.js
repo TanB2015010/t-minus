@@ -4,7 +4,7 @@ import { backgroundUrls } from "../Constants";
 import TimerContainer from "./TimerContainer";
 
 function App() {
-  const [mainTask, setMainTask] = useState("This is the thing to focus on");
+  const [mainTask, setMainTask] = useState("Main Task");
   const [backgroundUrl, setBackgroundUrl] = useState();
 
   useEffect(() => {
