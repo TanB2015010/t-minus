@@ -11,7 +11,7 @@ function Numbers(props) {
   };
 
   return (
-    <div>
+    <div className="numbersContainer">
       <input
         className="minutesInput"
         disabled={isRunning}
@@ -19,8 +19,9 @@ function Numbers(props) {
         value={minutes}
         autoComplete="false"
         onChange={updateMinutes}
-      />{" "}
-      :{seconds}
+        style={isRunning ? { cursor: "not-allowed" } : {}}
+      />
+      :{String(seconds).padStart(2, "0")}
     </div>
   );
 }
