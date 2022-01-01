@@ -1,5 +1,5 @@
 function Controls(props) {
-  const { isRunning, setIsRunning } = props;
+  const { onResetClick, isRunning, setIsRunning } = props;
 
   const updateIsRunning = () => {
     const newIsRunning = !isRunning;
@@ -10,12 +10,13 @@ function Controls(props) {
     <div className="controls">
       <button
         className="controls-button"
+        onClick={onResetClick}
         disabled={isRunning}
         style={{
           backgroundColor: "#f0ad4e",
         }}
       >
-        Restart
+        Reset
       </button>
       <button
         className="controls-button"

@@ -4,7 +4,6 @@ import { backgroundUrls } from "../Constants";
 import TimerContainer from "./TimerContainer";
 
 function App() {
-  const [mainTask, setMainTask] = useState("Main Task");
   const [backgroundUrl, setBackgroundUrl] = useState();
 
   useEffect(() => {
@@ -20,7 +19,7 @@ function App() {
         backgroundImage: `url(${backgroundUrl})`,
       }}
     >
-      <TimerContainer mainTask={mainTask} setMainTask={setMainTask} />
+      <TimerContainer />
     </div>
   );
 }

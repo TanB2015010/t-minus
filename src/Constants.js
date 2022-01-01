@@ -7,3 +7,11 @@ export const backgroundUrls = [
   "https://www.nasa.gov/sites/default/files/thumbnails/image/arp299.jpg",
   "https://www.nasa.gov/sites/default/files/thumbnails/image/potw2103a.jpg",
 ];
+
+export const LOCAL_STORAGE_KEYS = {
+  MAIN_TASK: "MAIN_TASK",
+  ORIGINAL_TIME: "ORIGINAL_TIME",
+};
+
+export const defaultTask = "Main Task";
+export const defaultTime = 1200;

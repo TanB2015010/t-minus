@@ -1,5 +1,5 @@
 function Numbers(props) {
-  const { time, isRunning, setTime } = props;
+  const { time, isRunning, enterTime } = props;
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
@@ -7,7 +7,7 @@ function Numbers(props) {
   const updateMinutes = (event) => {
     const newMinutes = event.target.value;
     const newTime = newMinutes * 60;
-    setTime(newTime);
+    enterTime(newTime);
   };
 
   return (

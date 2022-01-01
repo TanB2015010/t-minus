@@ -1,9 +1,9 @@
 function MainTask(props) {
-  const { mainTask, setMainTask } = props;
+  const { mainTask, enterMainTask } = props;
 
   const updateMainTask = (event) => {
     const newMainTask = event.target.value;
-    setMainTask(newMainTask);
+    enterMainTask(newMainTask);
   };
 
   return (
