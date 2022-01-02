@@ -11,6 +11,7 @@ function TimerContainer() {
   const [originalTime, setOriginalTime] = useState(defaultTime);
   const [time, setTime] = useState(originalTime);
   const [isRunning, setIsRunning] = useState(false);
+  const [intervalId, setIntervalId] = useState();
 
   const onResetClick = () => {
     setIsRunning(false);
@@ -44,6 +45,17 @@ function TimerContainer() {
       setMainTask(localTask);
     }
   }, []);
+
+  useEffect(() => {
+    if (isRunning) {
+      const newIntervalId = setInterval(() => {
+        setTime((oldTime) => oldTime - 1);
+      }, 1000);
+      setIntervalId(newIntervalId);
+    } else if (intervalId) {
+      clearInterval(intervalId);
+    }
+  }, [isRunning]);
 
   return (
     <div className="timer-container">
