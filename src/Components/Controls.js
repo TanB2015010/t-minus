@@ -13,7 +13,8 @@ function Controls(props) {
         onClick={onResetClick}
         disabled={isRunning}
         style={{
-          backgroundColor: "#f0ad4e",
+          backgroundColor: isRunning ? "#aaaaaa" : "#f0ad4e",
+          cursor: isRunning ? "not-allowed" : "pointer",
         }}
       >
         Reset
