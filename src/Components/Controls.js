@@ -11,7 +11,7 @@ function Controls(props) {
       <button
         className="controls-button"
         onClick={onResetClick}
-        disabled={isRunning}
+        readonly={isRunning}
         style={{
           backgroundColor: isRunning ? "#aaaaaa" : "#f0ad4e",
           cursor: isRunning ? "not-allowed" : "pointer",

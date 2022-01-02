@@ -63,6 +63,8 @@
   border-style: none;
   border-radius: 10px;
   cursor: pointer;
+  padding: 1px;
+  margin: 0px;
 }
 
 .minutesInput:focus {
