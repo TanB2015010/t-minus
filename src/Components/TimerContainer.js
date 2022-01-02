@@ -14,7 +14,6 @@ function TimerContainer() {
   const [intervalId, setIntervalId] = useState();
 
   const onResetClick = () => {
-    setIsRunning(false);
     setTime(originalTime);
   };
 
@@ -56,6 +55,13 @@ function TimerContainer() {
       clearInterval(intervalId);
     }
   }, [isRunning]);
+
+  useEffect(() => {
+    if (time <= 0) {
+      setIsRunning(false);
+      onResetClick();
+    }
+  }, [time]);
 
   return (
     <div className="timer-container">
