@@ -14,7 +14,7 @@ function Numbers(props) {
     <div className="numbersContainer">
       <input
         className="minutesInput"
-        disabled={isRunning}
+        readOnly={isRunning}
         type="text"
         value={minutes}
         autoComplete="false"
