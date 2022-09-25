@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 import { getLocalStorage, setLocalStorage } from "../utils";
 import { LOCAL_STORAGE_KEYS, defaultTask, defaultTime } from "../Constants";
@@ -7,17 +7,22 @@ import Controls from "./Controls";
 import MainTask from "./MainTask";
 
 function TimerContainer(props) {
-  const { updateBackground } = props;
+  const { updateBackground, isTestingBackground } = props;
 
   const [mainTask, setMainTask] = useState(defaultTask);
   const [originalTime, setOriginalTime] = useState(defaultTime);
   const [time, setTime] = useState(originalTime);
   const [isRunning, setIsRunning] = useState(false);
   const [intervalId, setIntervalId] = useState();
+  const intervalIdRef = useRef();
 
-  const onResetClick = () => {
+  useEffect(() => {
+    intervalIdRef.current = intervalId;
+  }, [intervalId]);
+
+  const onResetClick = useCallback(() => {
     setTime(originalTime);
-  };
+  }, [originalTime]);
 
   const enterTime = (newTime) => {
     setTime(newTime);
@@ -53,8 +58,8 @@ function TimerContainer(props) {
         setTime((oldTime) => oldTime - 1);
       }, 1000);
       setIntervalId(newIntervalId);
-    } else if (intervalId) {
-      clearInterval(intervalId);
+    } else if (intervalIdRef.current) {
+      clearInterval(intervalIdRef.current);
     }
   }, [isRunning]);
 
@@ -63,7 +68,7 @@ function TimerContainer(props) {
       setIsRunning(false);
       onResetClick();
     }
-  }, [time]);
+  }, [onResetClick, time]);
 
   return (
     <div className="timer-container">
@@ -74,7 +79,11 @@ function TimerContainer(props) {
         isRunning={isRunning}
         setIsRunning={setIsRunning}
       />
-      <button className="new-background-button" onClick={updateBackground}>
+      <button
+        className="new-background-button"
+        onClick={updateBackground}
+        disabled={isTestingBackground}
+      >
         New background
       </button>
     </div>
