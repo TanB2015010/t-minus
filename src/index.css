@@ -99,3 +99,10 @@
   transition-property: background-color, border-color, color;
   vertical-align: middle;
 }
+
+.new-background-button:disabled {
+  cursor: not-allowed;
+  background-color: rgb(99, 78, 119);
+  color: rgb(158, 158, 158);
+  border-color: rgb(37, 37, 37);
+}
