@@ -8,9 +8,12 @@ const chooseRandomBackgroundUrl = () =>
 
 function App() {
   const [backgroundUrl, setBackgroundUrl] = useState();
+  const isTestingBackground = !!testBackgroundUrl;
 
   useEffect(() => {
-    setBackgroundUrl(testBackgroundUrl || chooseRandomBackgroundUrl());
+    setBackgroundUrl(
+      isTestingBackground ? testBackgroundUrl : chooseRandomBackgroundUrl()
+    );
   }, []);
 
   return (
@@ -22,12 +25,16 @@ function App() {
     >
       <TimerContainer
         updateBackground={() => {
+          if (isTestingBackground) {
+            return;
+          }
           let newBackground = backgroundUrl;
           while (newBackground == backgroundUrl) {
             newBackground = chooseRandomBackgroundUrl();
           }
           setBackgroundUrl(newBackground);
         }}
+        isTestingBackground={isTestingBackground}
       />
     </div>
   );
