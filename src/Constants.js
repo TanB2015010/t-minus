@@ -13,6 +13,9 @@ export const backgroundUrls = [
   "https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_deep_field_smacs0723-5mb.jpg",
 ];
 
+export const testBackgroundUrl =
+  "https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_deep_field_smacs0723-5mb.jpg";
+
 export const LOCAL_STORAGE_KEYS = {
   MAIN_TASK: "MAIN_TASK",
   ORIGINAL_TIME: "ORIGINAL_TIME",

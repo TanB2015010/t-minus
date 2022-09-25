@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { backgroundUrls } from "./Constants";
+import { backgroundUrls, testBackgroundUrl } from "./Constants";
 import TimerContainer from "./Components/TimerContainer";
 
 const chooseRandomBackgroundUrl = () =>
@@ -10,7 +10,7 @@ function App() {
   const [backgroundUrl, setBackgroundUrl] = useState();
 
   useEffect(() => {
-    setBackgroundUrl(chooseRandomBackgroundUrl());
+    setBackgroundUrl(testBackgroundUrl || chooseRandomBackgroundUrl());
   }, []);
 
   return (
