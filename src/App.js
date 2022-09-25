@@ -14,7 +14,11 @@ function App() {
     setBackgroundUrl(
       isTestingBackground ? testBackgroundUrl : chooseRandomBackgroundUrl()
     );
-  }, []);
+  }, [isTestingBackground]);
+
+  useEffect(() => {
+    console.log(backgroundUrl);
+  }, [backgroundUrl]);
 
   return (
     <div
@@ -29,7 +33,7 @@ function App() {
             return;
           }
           let newBackground = backgroundUrl;
-          while (newBackground == backgroundUrl) {
+          while (newBackground === backgroundUrl) {
             newBackground = chooseRandomBackgroundUrl();
           }
           setBackgroundUrl(newBackground);
